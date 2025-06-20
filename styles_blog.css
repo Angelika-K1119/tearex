@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.HeroImage {
+  width: 100% !important;
+  background-size: cover;
+  background-position: center;
+}
+
+.PanelImageContent,
+.PanelImageContentReverse {
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.PanelImageContentReverse {
+  flex-direction: row-reverse;
+}
+
+img.Image {
+  width: 100%;
+  height: auto !important;
+  max-width: 500px;
+}
+
+.TextContentFlow {
+  width: 100%;
+  max-width: 500px;
+}
+
+.NavigationPillList {
+  flex-wrap: wrap;
+  justify-content: center !important;
+}
+
+.Footer {
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .HeroImage .Title {
+    font-size: 42px !important;
+    line-height: 1.2em !important;
+  }
+
+  .HeroImage .Subtitle {
+    font-size: 28px !important;
+    line-height: 1.2em !important;
+  }
+
+  .PanelImageContent,
+  .PanelImageContentReverse {
+    padding: 24px !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+  }
+
+  .TextContentHeading .Heading {
+    font-size: 20px !important;
+  }
+
+  .TextContentHeading .Subheading {
+    font-size: 16px !important;
+  }
+
+  .Footer {
+    padding-left: 16px !important;
+  }
+
+  .NavigationPill {
+    padding: 12px !important;
+    gap: 8px !important;
+  }
+}
