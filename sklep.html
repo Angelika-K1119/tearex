@@ -4,26 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TeaRex Sklep</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="Header">
-    <a href="index.html">
-      <img src="herbata.jpg" alt="Logo" style="width: 44px; height: 44px; border-radius: 50%">
+    <a href="index.html" class="LogoCircle">
+      <img src="herbata.jpg" alt="Logo">
     </a>
     <nav class="NavigationPillList">
-      <div class="NavigationPill"><a href="galeria.html">Galeria</a></div>
-      <div class="NavigationPill"><a href="sklep.html">Sklep</a></div>
-      <div class="NavigationPill"><a href="blog.html">Blog</a></div>
-      <div class="NavigationPill"><a href="onas.html">O nas</a></div>
-      <div class="NavigationPill"><a href="kontakt.html">Kontakt</a></div>
+      <a href="galeria.html">Galeria</a>
+      <a href="sklep.html" class="active">Sklep</a>
+      <a href="blog.html">Blog</a>
+      <a href="onas.html">O nas</a>
+      <a href="kontakt.html">Kontakt</a>
     </nav>
   </header>
 
-  <section class="HeroImage">
+  <section class="HeroImage hero-sklep">
     <div class="Title">TeaRex</div>
     <div class="Subtitle">Sklep</div>
   </section>
@@ -31,34 +29,34 @@
   <main class="CardGrid">
     <div class="ProductInfoCard">
       <img src="herbata_sklep1.png" alt="Czarna moc">
-      <div>Czarna moc</div>
-      <strong>$15.90</strong>
-      <div class="TextSmall">Dodaj do koszyka</div>
+      <div class="ProductName">Czarna moc</div>
+      <div class="ProductPrice">$15.90</div>
+      <button class="AddToCart">Dodaj do koszyka</button>
     </div>
     <div class="ProductInfoCard">
       <img src="herbata2.png" alt="Early Grey">
-      <div>Early Grey</div>
-      <strong>$15.90</strong>
-      <div class="TextSmall">Dodaj do koszyka</div>
+      <div class="ProductName">Early Grey</div>
+      <div class="ProductPrice">$15.90</div>
+      <button class="AddToCart">Dodaj do koszyka</button>
     </div>
     <div class="ProductInfoCard">
       <img src="herbata3.png" alt="Słodka pomarańcza">
-      <div>Słodka pomarańcza</div>
-      <strong>$18.90</strong>
-      <div class="TextSmall">Dodaj do koszyka</div>
+      <div class="ProductName">Słodka pomarańcza</div>
+      <div class="ProductPrice">$18.90</div>
+      <button class="AddToCart">Dodaj do koszyka</button>
     </div>
     <div class="ProductInfoCard">
       <img src="herbata4.png" alt="Intensywna cytryna">
-      <div>Intensywna cytryna</div>
-      <strong>$20.90</strong>
-      <div class="TextSmall">Dodaj do koszyka</div>
+      <div class="ProductName">Intensywna cytryna</div>
+      <div class="ProductPrice">$20.90</div>
+      <button class="AddToCart">Dodaj do koszyka</button>
     </div>
   </main>
 
   <footer class="Footer">
     <div>
       <strong>TeaRex</strong>
-      <p>Sklep | Blog | Przepisy | O nas | Galeria</p>
+      <p><a href="sklep.html">Sklep</a> | <a href="blog.html">Blog</a> | <a href="przepisy.html">Przepisy</a></p>
     </div>
     <div>
       <strong>Kontakt</strong>
