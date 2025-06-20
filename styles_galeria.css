@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.HeroImage {
+  width: 100% !important;
+  max-width: 1440px;
+  background-size: cover;
+  background-position: center;
+}
+
+.PanelImageDouble {
+  flex-wrap: wrap;
+  padding: 32px;
+}
+
+.PanelImageDouble img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  box-shadow: 11px 11px 13.2px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.Header {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.NavigationPillList {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.Footer {
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+/* Styl nagłówków (tekstów "TeaRex", "Galeria") */
+.Title {
+  font-size: 72px;
+  font-weight: 700;
+  color: #F5F5F5;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.Subtitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+  text-align: center;
+  text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+  .HeroImage {
+    padding: 80px 16px;
+  }
+
+  .Title {
+    font-size: 36px !important;
+    line-height: 1.2 !important;
+  }
+
+  .Subtitle {
+    font-size: 24px !important;
+    line-height: 1.2 !important;
+  }
+
+  .PanelImageDouble {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 24px !important;
+  }
+
+  .PanelImageDouble img {
+    width: 100% !important;
+  }
+
+  .Footer {
+    padding: 16px;
+  }
+
+  .TextLinkList {
+    width: 100% !important;
+  }
+
+  .NavigationPill {
+    padding: 16px !important;
+    font-size: 14px;
+  }
+}
