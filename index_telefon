@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main-page-smartfon">
+      <header class="header">
+        <div class="block">
+          <div class="icon-button"><div class="logo"></div></div>
+        </div>
+        <div class="account-circle-wrapper"><img class="account-circle" src="img/account-circle.svg" /></div>
+      </header>
+      <div class="hero-image">
+        <div class="text-content-title">
+          <div class="title">TeaRex</div>
+          <div class="subtitle">Królestwo herbaty</div>
+        </div>
+      </div>
+      <div class="card-grid-content">
+        <div class="div">
+          <div class="text-wrapper">TeaRex - królewska przyjemność</div>
+          <p class="p">Nowe smaki, aromaty, a może wiedza i inspiracja?</p>
+        </div>
+        <div class="cards">
+          <div class="card">
+            <div class="image"></div>
+            <div class="body">
+              <div class="div">
+                <div class="text-wrapper">Blog</div>
+                <p class="p">
+                  W naszym sklepie znajdziesz szeroką ofertę herbat, które z pewnością zapewnią Ci moc niesamowitych
+                  wrażeń!
+                </p>
+              </div>
+              <div class="button-wrapper">
+                <button class="button"><button class="button-2">Dowiedz się więcej...</button></button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image-2"></div>
+            <div class="body">
+              <div class="div">
+                <div class="text-wrapper">Blog</div>
+                <p class="p">Odkryj fascynujące historie, anegdoty i porcję solidnej wiedzy ze świata herbaty!</p>
+              </div>
+              <div class="button-wrapper">
+                <button class="button"><button class="button-2">Dowiedz się więcej...</button></button>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image-3"></div>
+            <div class="body">
+              <div class="div">
+                <div class="text-wrapper">Przepisy</div>
+                <p class="p">
+                  Chcesz zgłębić wiedzę o herbacie? Nic prostszego, z nami dowiesz się wszystkich potrzebnych
+                  szczegółów, by móc w pełni delektować się jej walorami!
+                </p>
+              </div>
+              <div class="button-wrapper">
+                <button class="button"><button class="button-2">Dowiedz się więcej...</button></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="footer">
+        <div class="button-list-wrapper">
+          <div class="button-list">
+            <img class="x-logo" src="img/x-logo.svg" />
+            <img class="img" src="img/logo-instagram.svg" />
+            <img class="img" src="img/logo-youtube.svg" />
+            <img class="img" src="img/linked-in.svg" />
+          </div>
+        </div>
+        <div class="links">
+          <div class="div">
+            <div class="text-strong-wrapper">
+              <div class="text-strong"><div class="text-strong-2">TeaRex</div></div>
+            </div>
+            <div class="text-link-list-item"><div class="list-item">Sklep</div></div>
+            <div class="text-link-list-item"><div class="list-item">Blog</div></div>
+            <div class="text-link-list-item"><div class="list-item">Przepisy</div></div>
+            <div class="text-link-list-item"><div class="list-item">O nas</div></div>
+            <div class="text-link-list-item"><div class="list-item">Galeria</div></div>
+          </div>
+          <div class="div">
+            <div class="text-strong-wrapper">
+              <div class="text-strong"><div class="text-strong-2">Kontakt</div></div>
+            </div>
+            <div class="text-link-list-item"><div class="list-item">610 892 633</div></div>
+            <div class="text-link-list-item"><div class="list-item">Tearex@wpgmail.com</div></div>
+            <div class="text-link-list-item"><p class="list-item">Al. Warszawskie 12, Kraków 03-300</p></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
