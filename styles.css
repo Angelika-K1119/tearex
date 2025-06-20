@@ -1,128 +1,106 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-}
-
-a {
+.NavigationPill a {
   text-decoration: none;
   color: inherit;
-}
-
-.MainPageDesktop {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 12px 24px;
+  border-radius: 38px;
   display: flex;
-  flex-direction: column;
-  gap: 54px;
-  background: white;
-}
-
-.Header {
-  padding: 32px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
-.NavigationPillList {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: flex-end;
 }
 
 .HeroImage {
-  background-image: url('mglisty_krajobraz.jpg');
+  width: 100%;
+  padding: 120px 24px;
+  background-image: url(herbata_sklep3.jpg);
   background-size: cover;
   background-position: center;
-  padding: 100px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
   text-align: center;
-  color: white;
 }
 
-.Title {
-  font-size: 72px;
-  font-weight: 700;
-}
-
-.Subtitle {
+.HeroImage .Title {
   font-size: 48px;
   font-weight: 700;
+  color: #F5F5F5;
+}
+
+.HeroImage .Subtitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: white;
   text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25);
 }
 
-.CardGridContentList {
-  background: rgba(206, 219, 181, 0.15);
-  padding: 47px 64px;
-  border-radius: 53px;
-}
-
-.Card {
+.CardGrid {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
-  padding: 24px;
-  border-radius: 19px;
-  background: white;
-  box-shadow: 16px 9px 25px rgba(0,0,0,0.08);
-  margin-bottom: 24px;
+  justify-content: center;
+  gap: 32px;
+  padding: 32px;
 }
 
-.Image {
-  width: 160px;
-  height: 160px;
-  border-radius: 20px;
-  object-fit: cover;
-}
-
-.Button {
-  padding: 8px;
+.ProductInfoCard {
   background: rgba(209, 223, 196, 0.15);
-  border-radius: 8px;
-  font-weight: 600;
+  box-shadow: 8px 9px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 16px;
+  max-width: 300px;
+  flex: 1 1 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ProductInfoCard img {
+  height: auto;
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.TextSmall {
+  background: white;
+  padding: 6px 18px;
+  border-radius: 20px;
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.25);
   font-size: 14px;
-  color: #322F35;
+  font-weight: 600;
 }
 
 .Footer {
-  padding: 32px 24px;
-  background: white;
-  display: flex;
+  background: rgba(206, 219, 181, 0.15);
+  border-radius: 50px;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 32px;
+  gap: 24px;
+  justify-content: space-between;
 }
 
 @media (max-width: 768px) {
-  .Header, .Card {
-    flex-direction: column;
-    align-items: flex-start;
+  .HeroImage .Title {
+    font-size: 36px;
   }
 
-  .Image {
-    width: 100%;
-    height: auto;
+  .HeroImage .Subtitle {
+    font-size: 24px;
   }
 
   .NavigationPillList {
     justify-content: center;
   }
 
-  .Title {
-    font-size: 32px;
+  .Footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .Subtitle {
-    font-size: 20px;
-  }
-
-  .CardGridContentList {
-    padding: 24px;
+  .TextLinkList {
+    width: 100% !important;
   }
 }
