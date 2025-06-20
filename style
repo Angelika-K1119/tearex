@@ -1,0 +1,91 @@
+<style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .MainPageDesktop {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 54px;
+      background: white;
+    }
+
+    .Header {
+      padding: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .NavigationPillList {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .Card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      padding: 24px;
+      border-radius: 19px;
+      background: white;
+      box-shadow: 16px 9px 25px rgba(0,0,0,0.08);
+    }
+
+    .Image {
+      width: 160px;
+      height: 160px;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    .Button {
+      padding: 8px;
+      background: rgba(209, 223, 196, 0.15);
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .Header, .Card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .Image {
+        width: 100%;
+        height: auto;
+      }
+
+      .NavigationPillList {
+        justify-content: center;
+      }
+
+      .Title {
+        font-size: 32px !important;
+        text-align: center;
+      }
+
+      .Subtitle {
+        font-size: 20px !important;
+        text-align: center;
+      }
+
+      .CardGridContentList {
+        padding: 16px !important;
+      }
+    }
