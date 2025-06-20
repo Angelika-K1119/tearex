@@ -1,77 +1,71 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TeaRex</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TeaRex Sklep</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="MainPageDesktop">
-    <div class="Header">
-      <a href="index.html">
-        <div style="width: 44px; height: 44px; background: #F5F5F5; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-          <img src="herbata.jpg" alt="logo" width="20" height="20" />
-        </div>
-      </a>
-      <div class="NavigationPillList">
-        <a href="galeria.html">Galeria</a>
-        <a href="sklep.html">Sklep</a>
-        <a href="blog.html">Blog</a>
-        <a href="onas.html">O nas</a>
-        <a href="kontakt.html">Kontakt</a>
-      </div>
+  <header class="Header">
+    <a href="index.html">
+      <img src="herbata.jpg" alt="Logo" style="width: 44px; height: 44px; border-radius: 50%">
+    </a>
+    <nav class="NavigationPillList">
+      <div class="NavigationPill"><a href="galeria.html">Galeria</a></div>
+      <div class="NavigationPill"><a href="sklep.html">Sklep</a></div>
+      <div class="NavigationPill"><a href="blog.html">Blog</a></div>
+      <div class="NavigationPill"><a href="onas.html">O nas</a></div>
+      <div class="NavigationPill"><a href="kontakt.html">Kontakt</a></div>
+    </nav>
+  </header>
+
+  <section class="HeroImage">
+    <div class="Title">TeaRex</div>
+    <div class="Subtitle">Sklep</div>
+  </section>
+
+  <main class="CardGrid">
+    <div class="ProductInfoCard">
+      <img src="herbata_sklep1.png" alt="Czarna moc">
+      <div>Czarna moc</div>
+      <strong>$15.90</strong>
+      <div class="TextSmall">Dodaj do koszyka</div>
     </div>
-
-    <div class="HeroImage">
-      <div class="Title">TeaRex</div>
-      <div class="Subtitle">Królestwo herbaty</div>
+    <div class="ProductInfoCard">
+      <img src="herbata2.png" alt="Early Grey">
+      <div>Early Grey</div>
+      <strong>$15.90</strong>
+      <div class="TextSmall">Dodaj do koszyka</div>
     </div>
-
-    <div class="CardGridContentList">
-      <div class="Card">
-        <img class="Image" src="sklep_uciete.png" alt="Sklep">
-        <div>
-          <h2>Sklep</h2>
-          <p>W naszym sklepie znajdziesz szeroką ofertę herbat, które z pewnością zapewnią Ci moc niesamowitych wrażeń!</p>
-          <a href="sklep.html" class="Button">Dowiedz się więcej...</a>
-        </div>
-      </div>
-
-      <div class="Card">
-        <img class="Image" src="herbata_blog.png" alt="Blog">
-        <div>
-          <h2>Blog</h2>
-          <p>Odkryj fascynujące historie, anegdoty i porcję solidnej wiedzy ze świata herbaty!</p>
-          <a href="blog.html" class="Button">Dowiedz się więcej...</a>
-        </div>
-      </div>
-
-      <div class="Card">
-        <img class="Image" src="herbata_przepisy.png" alt="Przepisy">
-        <div>
-          <h2>Przepisy</h2>
-          <p>Chcesz zgłębić wiedzę o herbacie? Nic prostszego – z nami dowiesz się wszystkiego!</p>
-          <a href="przepisy.html" class="Button">Dowiedz się więcej...</a>
-        </div>
-      </div>
+    <div class="ProductInfoCard">
+      <img src="herbata3.png" alt="Słodka pomarańcza">
+      <div>Słodka pomarańcza</div>
+      <strong>$18.90</strong>
+      <div class="TextSmall">Dodaj do koszyka</div>
     </div>
-
-    <div class="Footer">
-      <div>
-        <strong>TeaRex</strong>
-        <p><a href="sklep.html">Sklep</a></p>
-        <p><a href="blog.html">Blog</a></p>
-        <p><a href="przepisy.html">Przepisy</a></p>
-      </div>
-      <div>
-        <strong>Kontakt</strong>
-        <p>610 892 633</p>
-        <p>Tearex@wpgmail.com</p>
-        <p>Al. Warszawskie 12, Kraków 03-300</p>
-      </div>
+    <div class="ProductInfoCard">
+      <img src="herbata4.png" alt="Intensywna cytryna">
+      <div>Intensywna cytryna</div>
+      <strong>$20.90</strong>
+      <div class="TextSmall">Dodaj do koszyka</div>
     </div>
-  </div>
+  </main>
+
+  <footer class="Footer">
+    <div>
+      <strong>TeaRex</strong>
+      <p>Sklep | Blog | Przepisy | O nas | Galeria</p>
+    </div>
+    <div>
+      <strong>Kontakt</strong>
+      <p>610 892 633</p>
+      <p>Tearex@wpgmail.com</p>
+      <p>Al. Warszawskie 12, Kraków 03-300</p>
+    </div>
+  </footer>
 </body>
 </html>
