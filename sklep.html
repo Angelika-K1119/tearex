@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
       min-height: 100vh;
       color: #333;
     }
@@ -83,7 +83,7 @@
     }
 
     .NavigationPillList a:hover {
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
       color: white;
       transform: translateY(-2px);
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -94,7 +94,7 @@
     }
 
     .NavigationPillList a.active {
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
       color: white;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
@@ -103,7 +103,7 @@
     .HeroImage {
       text-align: center;
       padding: 4rem 2rem;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
       margin-bottom: 3rem;
     }
 
@@ -149,7 +149,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(46, 125, 50, 0.1));
       opacity: 0;
       transition: opacity 0.3s ease;
       z-index: 1;
@@ -191,7 +191,7 @@
     .ProductPrice {
       font-size: 1.8rem;
       font-weight: 700;
-      color: #667eea;
+      color: #4CAF50;
       text-align: center;
       margin-bottom: 1.5rem;
     }
@@ -200,7 +200,7 @@
       width: calc(100% - 3rem);
       margin: 0 1.5rem 1.5rem;
       padding: 1rem;
-      background: linear-gradient(135deg, #667eea, #764ba2);
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
       color: white;
       border: none;
       border-radius: 12px;
@@ -225,7 +225,7 @@
 
     .AddToCart:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
     }
 
     .AddToCart:hover::before {
@@ -255,7 +255,7 @@
       font-size: 1.2rem;
       display: block;
       margin-bottom: 1rem;
-      color: #667eea;
+      color: #4CAF50;
     }
 
     .Footer a {
@@ -265,7 +265,7 @@
     }
 
     .Footer a:hover {
-      color: #667eea;
+      color: #4CAF50;
     }
 
     /* Responsive Design */
@@ -404,7 +404,7 @@
         
         setTimeout(() => {
           this.textContent = 'Dodaj do koszyka';
-          this.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+          this.style.background = 'linear-gradient(135deg, #4CAF50, #2E7D32)';
         }, 1000);
         
         console.log(`Dodano do koszyka: ${productName}`);
