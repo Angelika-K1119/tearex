@@ -4,13 +4,329 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TeaRex Sklep</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      color: #333;
+    }
+
+    /* Header Styles */
+    .Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .LogoCircle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .LogoCircle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .LogoCircle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .NavigationPillList {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .NavigationPillList a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .NavigationPillList a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.5s;
+    }
+
+    .NavigationPillList a:hover {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .NavigationPillList a:hover::before {
+      left: 100%;
+    }
+
+    .NavigationPillList a.active {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hero Section */
+    .HeroImage {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      margin-bottom: 3rem;
+    }
+
+    .Title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 0.5rem;
+    }
+
+    .Subtitle {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Product Grid */
+    .CardGrid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    .ProductInfoCard {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      transition: all 0.4s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .ProductInfoCard::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+    }
+
+    .ProductInfoCard:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .ProductInfoCard:hover::before {
+      opacity: 1;
+    }
+
+    .ProductInfoCard img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .ProductInfoCard:hover img {
+      transform: scale(1.1);
+    }
+
+    .ProductInfoCard > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ProductName {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #333;
+      padding: 1.5rem 1.5rem 0.5rem;
+      text-align: center;
+    }
+
+    .ProductPrice {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #667eea;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .AddToCart {
+      width: calc(100% - 3rem);
+      margin: 0 1.5rem 1.5rem;
+      padding: 1rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .AddToCart::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .AddToCart:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    .AddToCart:hover::before {
+      left: 100%;
+    }
+
+    .AddToCart:active {
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    .Footer {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 3rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .Footer > div {
+      text-align: center;
+    }
+
+    .Footer strong {
+      font-size: 1.2rem;
+      display: block;
+      margin-bottom: 1rem;
+      color: #667eea;
+    }
+
+    .Footer a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .Footer a:hover {
+      color: #667eea;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .Header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .NavigationPillList {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+      }
+
+      .Title {
+        font-size: 2.5rem;
+      }
+
+      .Subtitle {
+        font-size: 1.2rem;
+      }
+
+      .CardGrid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem 2rem;
+      }
+
+      .LogoCircle {
+        width: 50px;
+        height: 50px;
+      }
+    }
+
+    /* Loading Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .ProductInfoCard {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .ProductInfoCard:nth-child(1) { animation-delay: 0.1s; }
+    .ProductInfoCard:nth-child(2) { animation-delay: 0.2s; }
+    .ProductInfoCard:nth-child(3) { animation-delay: 0.3s; }
+    .ProductInfoCard:nth-child(4) { animation-delay: 0.4s; }
+  </style>
 </head>
 <body>
   <header class="Header">
     <a href="index.html" class="LogoCircle">
-      <img src="herbata.jpg" alt="Logo">
+      <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=200&h=200&fit=crop&crop=center" alt="TeaRex Logo">
     </a>
     <nav class="NavigationPillList">
       <a href="galeria.html">Galeria</a>
@@ -28,25 +344,25 @@
 
   <main class="CardGrid">
     <div class="ProductInfoCard">
-      <img src="herbata_sklep1.png" alt="Czarna moc">
+      <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop&crop=center" alt="Czarna moc">
       <div class="ProductName">Czarna moc</div>
       <div class="ProductPrice">$15.90</div>
       <button class="AddToCart">Dodaj do koszyka</button>
     </div>
     <div class="ProductInfoCard">
-      <img src="herbata2.png" alt="Early Grey">
+      <img src="https://images.unsplash.com/photo-1597318947214-9d7e3d6b1b9a?w=400&h=300&fit=crop&crop=center" alt="Early Grey">
       <div class="ProductName">Early Grey</div>
       <div class="ProductPrice">$15.90</div>
       <button class="AddToCart">Dodaj do koszyka</button>
     </div>
     <div class="ProductInfoCard">
-      <img src="herbata3.png" alt="Słodka pomarańcza">
+      <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=400&h=300&fit=crop&crop=center" alt="Słodka pomarańcza">
       <div class="ProductName">Słodka pomarańcza</div>
       <div class="ProductPrice">$18.90</div>
       <button class="AddToCart">Dodaj do koszyka</button>
     </div>
     <div class="ProductInfoCard">
-      <img src="herbata4.png" alt="Intensywna cytryna">
+      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&crop=center" alt="Intensywna cytryna">
       <div class="ProductName">Intensywna cytryna</div>
       <div class="ProductPrice">$20.90</div>
       <button class="AddToCart">Dodaj do koszyka</button>
@@ -65,5 +381,35 @@
       <p>Al. Warszawskie 12, Kraków 03-300</p>
     </div>
   </footer>
+
+  <script>
+    // Add click functionality to logo
+    document.querySelector('.LogoCircle').addEventListener('click', function(e) {
+      e.preventDefault();
+      // Add a nice transition effect before redirecting
+      this.style.transform = 'scale(0.9)';
+      setTimeout(() => {
+        window.location.href = 'index.html';
+      }, 150);
+    });
+
+    // Add cart functionality
+    document.querySelectorAll('.AddToCart').forEach(button => {
+      button.addEventListener('click', function() {
+        const productName = this.parentElement.querySelector('.ProductName').textContent;
+        
+        // Add visual feedback
+        this.textContent = 'Dodano!';
+        this.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+        
+        setTimeout(() => {
+          this.textContent = 'Dodaj do koszyka';
+          this.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+        }, 1000);
+        
+        console.log(`Dodano do koszyka: ${productName}`);
+      });
+    });
+  </script>
 </body>
 </html>
