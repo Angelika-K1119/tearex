@@ -8,99 +8,175 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="main-page-smartfon">
-      <header class="header">
-        <div class="block">
-          <div class="icon-button"><div class="logo"></div></div>
-        </div>
-        <div class="account-circle-wrapper"><img class="account-circle" src="img/account-circle.svg" /></div>
-      </header>
-      <div class="hero-image">
-        <div class="text-content-title">
-          <div class="title">TeaRex</div>
-          <div class="subtitle">Królestwo herbaty</div>
-        </div>
-      </div>
-      <div class="card-grid-content">
-        <div class="div">
-          <div class="text-wrapper">TeaRex - królewska przyjemność</div>
-          <p class="p">Nowe smaki, aromaty, a może wiedza i inspiracja?</p>
-        </div>
-        <div class="cards">
-          <div class="card">
-            <div class="image"></div>
-            <div class="body">
-              <div class="div">
-                <div class="text-wrapper">Blog</div>
-                <p class="p">
-                  W naszym sklepie znajdziesz szeroką ofertę herbat, które z pewnością zapewnią Ci moc niesamowitych
-                  wrażeń!
-                </p>
-              </div>
-              <div class="button-wrapper">
-                <button class="button"><button class="button-2">Dowiedz się więcej...</button></button>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="image-2"></div>
-            <div class="body">
-              <div class="div">
-                <div class="text-wrapper">Blog</div>
-                <p class="p">Odkryj fascynujące historie, anegdoty i porcję solidnej wiedzy ze świata herbaty!</p>
-              </div>
-              <div class="button-wrapper">
-                <button class="button"><button class="button-2">Dowiedz się więcej...</button></button>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="image-3"></div>
-            <div class="body">
-              <div class="div">
-                <div class="text-wrapper">Przepisy</div>
-                <p class="p">
-                  Chcesz zgłębić wiedzę o herbacie? Nic prostszego, z nami dowiesz się wszystkich potrzebnych
-                  szczegółów, by móc w pełni delektować się jej walorami!
-                </p>
-              </div>
-              <div class="button-wrapper">
-                <button class="button"><button class="button-2">Dowiedz się więcej...</button></button>
-              </div>
-            </div>
-          </div>
+    <div data-layer="Main page smartfon" class="MainPageSmartfon" style="width: 380px; background: var(--Background-Default-Default, white); overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 13px; display: inline-flex">
+  <div data-layer="Header" data-platform="Mobile" data-state="Default" class="Header" style="align-self: stretch; padding-left: 24px; padding-right: 24px; padding-top: 4px; padding-bottom: 4px; background: var(--Background-Default-Default, white); overflow: hidden; justify-content: space-between; align-items: center; display: inline-flex; flex-wrap: wrap; align-content: center">
+    <div data-layer="Block" class="Block" style="justify-content: flex-start; align-items: center; gap: 24px; display: flex">
+      <div data-layer="Icon Button" data-size="Medium" data-state="Default" data-variant="Neutral" class="IconButton" style="width: 44px; padding: 12px; background: var(--Background-Default-Secondary, #F5F5F5); overflow: hidden; border-radius: 32px; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <div data-svg-wrapper data-layer="logo" class="Logo" style="position: relative">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <circle cx="10" cy="10" r="10" fill="#D9D9D9"/>
+          <circle cx="10" cy="10" r="10" fill="url(#pattern0_149_1156)" fill-opacity="0.2"/>
+          <defs>
+          <pattern id="pattern0_149_1156" patternContentUnits="objectBoundingBox" width="1" height="1">
+          <use xlink:href="#image0_149_1156" transform="scale(0.00390625)"/>
+          </pattern>
+          <image id="image0_149_1156" width="256" height="256" preserveAspectRatio="none" xlink:href="data:image/png;base64,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"/>
+          </defs>
+          </svg>
         </div>
       </div>
-      <footer class="footer">
-        <div class="button-list-wrapper">
-          <div class="button-list">
-            <img class="x-logo" src="img/x-logo.svg" />
-            <img class="img" src="img/logo-instagram.svg" />
-            <img class="img" src="img/logo-youtube.svg" />
-            <img class="img" src="img/linked-in.svg" />
-          </div>
-        </div>
-        <div class="links">
-          <div class="div">
-            <div class="text-strong-wrapper">
-              <div class="text-strong"><div class="text-strong-2">TeaRex</div></div>
-            </div>
-            <div class="text-link-list-item"><div class="list-item">Sklep</div></div>
-            <div class="text-link-list-item"><div class="list-item">Blog</div></div>
-            <div class="text-link-list-item"><div class="list-item">Przepisy</div></div>
-            <div class="text-link-list-item"><div class="list-item">O nas</div></div>
-            <div class="text-link-list-item"><div class="list-item">Galeria</div></div>
-          </div>
-          <div class="div">
-            <div class="text-strong-wrapper">
-              <div class="text-strong"><div class="text-strong-2">Kontakt</div></div>
-            </div>
-            <div class="text-link-list-item"><div class="list-item">610 892 633</div></div>
-            <div class="text-link-list-item"><div class="list-item">Tearex@wpgmail.com</div></div>
-            <div class="text-link-list-item"><p class="list-item">Al. Warszawskie 12, Kraków 03-300</p></div>
-          </div>
-        </div>
-      </footer>
     </div>
+    <div data-layer="Icon Button" data-size="Small" data-state="Default" data-variant="Subtle" class="IconButton" style="padding: 8px; overflow: hidden; border-radius: 32px; justify-content: center; align-items: center; display: flex">
+      <div data-svg-wrapper data-layer="account_circle" class="AccountCircle" style="position: relative">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4.87533 14.2498C5.58366 13.7082 6.37533 13.2811 7.25033 12.9686C8.12533 12.6561 9.04199 12.4998 10.0003 12.4998C10.9587 12.4998 11.8753 12.6561 12.7503 12.9686C13.6253 13.2811 14.417 13.7082 15.1253 14.2498C15.6114 13.6804 15.9899 13.0346 16.2607 12.3123C16.5316 11.5901 16.667 10.8193 16.667 9.99984C16.667 8.15262 16.0177 6.5797 14.7191 5.28109C13.4205 3.98248 11.8475 3.33317 10.0003 3.33317C8.1531 3.33317 6.58019 3.98248 5.28158 5.28109C3.98296 6.5797 3.33366 8.15262 3.33366 9.99984C3.33366 10.8193 3.46908 11.5901 3.73991 12.3123C4.01074 13.0346 4.38921 13.6804 4.87533 14.2498ZM10.0003 10.8332C9.18088 10.8332 8.48991 10.5519 7.92741 9.98942C7.36491 9.42692 7.08366 8.73595 7.08366 7.9165C7.08366 7.09706 7.36491 6.40609 7.92741 5.84359C8.48991 5.28109 9.18088 4.99984 10.0003 4.99984C10.8198 4.99984 11.5107 5.28109 12.0732 5.84359C12.6357 6.40609 12.917 7.09706 12.917 7.9165C12.917 8.73595 12.6357 9.42692 12.0732 9.98942C11.5107 10.5519 10.8198 10.8332 10.0003 10.8332ZM10.0003 18.3332C8.84755 18.3332 7.76421 18.1144 6.75033 17.6769C5.73644 17.2394 4.85449 16.6457 4.10449 15.8957C3.35449 15.1457 2.76074 14.2637 2.32324 13.2498C1.88574 12.2359 1.66699 11.1526 1.66699 9.99984C1.66699 8.84706 1.88574 7.76373 2.32324 6.74984C2.76074 5.73595 3.35449 4.854 4.10449 4.104C4.85449 3.354 5.73644 2.76025 6.75033 2.32275C7.76421 1.88525 8.84755 1.6665 10.0003 1.6665C11.1531 1.6665 12.2364 1.88525 13.2503 2.32275C14.2642 2.76025 15.1462 3.354 15.8962 4.104C16.6462 4.854 17.2399 5.73595 17.6774 6.74984C18.1149 7.76373 18.3337 8.84706 18.3337 9.99984C18.3337 11.1526 18.1149 12.2359 17.6774 13.2498C17.2399 14.2637 16.6462 15.1457 15.8962 15.8957C15.1462 16.6457 14.2642 17.2394 13.2503 17.6769C12.2364 18.1144 11.1531 18.3332 10.0003 18.3332Z" fill="var(--Schemes-On-Surface, #1D1B20)"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div data-layer="Hero Image" class="HeroImage" style="align-self: stretch; padding-left: 24px; padding-right: 24px; padding-top: 17px; padding-bottom: 17px; background-image: url(mglisty_krajobraz.jpg); flex-direction: column; justify-content: center; align-items: center; gap: 32px; display: flex">
+    <div data-layer="Text Content Title" data-align="Center" data-has-subtitle="true" class="TextContentTitle" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
+      <div data-layer="Title" class="Title" style="align-self: stretch; text-align: center; color: #F5F5F5; font-size: 48px; font-family: Inter; font-weight: 700; line-height: 57.60px; word-wrap: break-word">TeaRex</div>
+      <div data-layer="Subtitle" class="Subtitle" style="align-self: stretch; text-align: center; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 24px; font-family: Inter; font-weight: 700; line-height: 28.80px; word-wrap: break-word; text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25)">Królestwo herbaty</div>
+    </div>
+  </div>
+  <div data-layer="Card Grid Content List" data-platform="Mobile" class="CardGridContentList" style="align-self: stretch; padding: 24px; background: rgba(206, 219, 181, 0.15); border-radius: 53px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 41px; display: flex">
+    <div data-layer="Text Content Heading" data-align="Start" data-has-subheading="true" class="TextContentHeading" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+      <div data-layer="Heading" class="Heading" style="align-self: stretch; color: var(--Text-Default-Default, #1E1E1E); font-size: 20px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">TeaRex - królewska przyjemność</div>
+      <div data-layer="Subheading" class="Subheading" style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Secondary, #757575); font-size: 14px; font-family: Inter; font-weight: 400; line-height: 19.60px; word-wrap: break-word">Nowe smaki, aromaty, a może wiedza i inspiracja? </div>
+    </div>
+    <div data-layer="Cards" class="Cards" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 40px; display: flex">
+      <div data-layer="Card" data-asset-type="Image" data-asset="true" data-button="true" data-direction="Horizontal" data-variant="Default" class="Card" style="align-self: stretch; min-width: 240px; box-shadow: 16px 9px 25.100000381469727px rgba(0, 0, 0, 0.08); border-radius: 19px; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex; flex-wrap: wrap; align-content: flex-start">
+        <img data-layer="Image" class="Image" style="flex: 1 1 0; height: 160px; min-width: 160px; border-radius: 20px" src="herbata_blog.png" />
+        <div data-layer="Body" class="Body" style="flex: 1 1 0; min-width: 160px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+          <div data-layer="Text" class="Text" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+            <div data-layer="Title" class="Title" style="align-self: stretch; color: var(--Text-Default-Default, #1E1E1E); font-size: 20px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Blog</div>
+            <div data-layer="Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story." class="BodyTextForWhateverYouDLikeToSayAddMainTakeawayPointsQuotesAnecdotesOrEvenAVeryVeryShortStory" style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Secondary, #757575); font-size: 14px; font-family: Inter; font-weight: 400; line-height: 19.60px; word-wrap: break-word">W naszym sklepie znajdziesz szeroką ofertę herbat, które z pewnością zapewnią Ci moc niesamowitych wrażeń!</div>
+          </div>
+          <div data-layer="dowiedz się" data-align="Start" data-button-end="true" data-button-start="false" class="DowiedzSi" style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
+            <div data-layer="Button" data-has-icon-end="false" data-has-icon-start="false" data-size="Small" data-state="Hover" data-variant="Neutral" class="Button" style="padding: 8px; background: rgba(209, 223, 196, 0.15); box-shadow: 6px 6px 11.800000190734863px -2px rgba(0, 0, 0, 0.25); overflow: hidden; border-radius: 8px; justify-content: center; align-items: center; gap: 8px; display: flex">
+              <div data-layer="Button" class="Button" style="color: var(--Schemes-Inverse-Surface, #322F35); font-size: 14px; font-family: Inter; font-weight: 600; line-height: 14px; word-wrap: break-word">Dowiedz się więcej...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-layer="Card" data-asset-type="Image" data-asset="true" data-button="true" data-direction="Horizontal" data-variant="Default" class="Card" style="align-self: stretch; min-width: 240px; box-shadow: 16px 9px 25.100000381469727px rgba(0, 0, 0, 0.08); border-radius: 19px; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex; flex-wrap: wrap; align-content: flex-start">
+        <img data-layer="Image" class="Image" style="flex: 1 1 0; height: 160px; min-width: 160px; border-radius: 20px" src="herbata_blog.png" />
+        <div data-layer="Body" class="Body" style="flex: 1 1 0; min-width: 160px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+          <div data-layer="Text" class="Text" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+            <div data-layer="Title" class="Title" style="align-self: stretch; color: var(--Text-Default-Default, #1E1E1E); font-size: 20px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Blog</div>
+            <div data-layer="Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story." class="BodyTextForWhateverYouDLikeToSayAddMainTakeawayPointsQuotesAnecdotesOrEvenAVeryVeryShortStory" style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Secondary, #757575); font-size: 14px; font-family: Inter; font-weight: 400; line-height: 19.60px; word-wrap: break-word">Odkryj fascynujące historie, anegdoty i porcję solidnej wiedzy ze świata herbaty!</div>
+          </div>
+          <div data-layer="Button Group" data-align="Start" data-button-end="true" data-button-start="false" class="ButtonGroup" style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
+            <div data-layer="Button" data-has-icon-end="false" data-has-icon-start="false" data-size="Small" data-state="Default" data-variant="Neutral" class="Button" style="padding: 8px; background: rgba(209, 223, 196, 0.15); box-shadow: 6px 6px 11.800000190734863px -2px rgba(0, 0, 0, 0.25); overflow: hidden; border-radius: 8px; justify-content: center; align-items: center; gap: 8px; display: flex">
+              <div data-layer="Button" class="Button" style="color: var(--Schemes-Inverse-Surface, #322F35); font-size: 14px; font-family: Inter; font-weight: 600; line-height: 14px; word-wrap: break-word">Dowiedz się więcej...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-layer="Card" data-asset-type="Image" data-asset="true" data-button="true" data-direction="Horizontal" data-variant="Default" class="Card" style="align-self: stretch; min-width: 240px; box-shadow: 16px 9px 25.100000381469727px rgba(0, 0, 0, 0.08); border-radius: 19px; justify-content: flex-start; align-items: flex-start; gap: 24px; display: inline-flex; flex-wrap: wrap; align-content: flex-start">
+        <img data-layer="Image" class="Image" style="flex: 1 1 0; height: 160px; min-width: 160px; border-radius: 20px" src="herbata_przepisy.png" />
+        <div data-layer="Body" class="Body" style="flex: 1 1 0; min-width: 160px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 16px; display: inline-flex">
+          <div data-layer="Text" class="Text" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+            <div data-layer="Title" class="Title" style="align-self: stretch; color: var(--Text-Default-Default, #1E1E1E); font-size: 20px; font-family: Inter; font-weight: 400; line-height: 24px; word-wrap: break-word">Przepisy</div>
+            <div data-layer="Body text for whatever you’d like to say. Add main takeaway points, quotes, anecdotes, or even a very very short story." class="BodyTextForWhateverYouDLikeToSayAddMainTakeawayPointsQuotesAnecdotesOrEvenAVeryVeryShortStory" style="align-self: stretch; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Secondary, #757575); font-size: 14px; font-family: Inter; font-weight: 400; line-height: 19.60px; word-wrap: break-word">Chcesz zgłębić wiedzę o herbacie? Nic prostszego, z nami dowiesz się wszystkich potrzebnych szczegółów, by móc w pełni delektować się jej walorami!</div>
+          </div>
+          <div data-layer="Button Group" data-align="Start" data-button-end="true" data-button-start="false" class="ButtonGroup" style="align-self: stretch; justify-content: flex-start; align-items: center; gap: 16px; display: inline-flex">
+            <div data-layer="Button" data-has-icon-end="false" data-has-icon-start="false" data-size="Small" data-state="Default" data-variant="Neutral" class="Button" style="padding: 8px; background: rgba(209, 223, 196, 0.15); box-shadow: 6px 6px 11.800000190734863px -2px rgba(0, 0, 0, 0.25); overflow: hidden; border-radius: 8px; justify-content: center; align-items: center; gap: 8px; display: flex">
+              <div data-layer="Button" class="Button" style="color: var(--Schemes-Inverse-Surface, #322F35); font-size: 14px; font-family: Inter; font-weight: 600; line-height: 14px; word-wrap: break-word">Dowiedz się więcej...</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div data-layer="Footer" data-platform="Mobile" class="Footer" style="align-self: stretch; height: 486px; padding-top: 32px; padding-bottom: 32px; padding-left: 24px; background: var(--Background-Default-Default, white); overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 64px; display: flex">
+    <div data-layer="Title" class="Title" style="align-self: stretch; min-width: 240px; justify-content: space-between; align-items: center; display: inline-flex">
+      <div data-layer="Button List" class="ButtonList" style="justify-content: flex-start; align-items: center; gap: 16px; display: flex">
+        <div data-svg-wrapper data-layer="X Logo" class="XLogo" style="position: relative">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M14.2835 10.1635L23.212 0H21.097L13.3411 8.82305L7.15101 0H0.00976562L9.37236 13.3433L0.00976562 24H2.1248L10.31 14.6806L16.8485 24H23.9898M2.88817 1.5619H6.13746L21.0954 22.5148H17.8453" fill="var(--Icon-Default-Default, #1E1E1E)"/>
+          </svg>
+        </div>
+        <div data-svg-wrapper data-layer="Logo Instagram" class="LogoInstagram" style="position: relative">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_149_1374)">
+          <path d="M11.9902 2.163C15.1942 2.163 15.5742 2.175 16.8402 2.233C20.0922 2.381 21.6112 3.924 21.7592 7.152C21.8172 8.417 21.8282 8.797 21.8282 12.001C21.8282 15.206 21.8162 15.585 21.7592 16.85C21.6102 20.075 20.0952 21.621 16.8402 21.769C15.5742 21.827 15.1962 21.839 11.9902 21.839C8.78623 21.839 8.40623 21.827 7.14123 21.769C3.88123 21.62 2.37023 20.07 2.22223 16.849C2.16423 15.584 2.15223 15.205 2.15223 12C2.15223 8.796 2.16523 8.417 2.22223 7.151C2.37123 3.924 3.88623 2.38 7.14123 2.232C8.40723 2.175 8.78623 2.163 11.9902 2.163ZM11.9902 0C8.73123 0 8.32323 0.014 7.04323 0.072C2.68523 0.272 0.263234 2.69 0.0632344 7.052C0.00423437 8.333 -0.00976562 8.741 -0.00976562 12C-0.00976562 15.259 0.00423437 15.668 0.0622344 16.948C0.262234 21.306 2.68023 23.728 7.04223 23.928C8.32323 23.986 8.73123 24 11.9902 24C15.2492 24 15.6582 23.986 16.9382 23.928C21.2922 23.728 23.7202 21.31 23.9172 16.948C23.9762 15.668 23.9902 15.259 23.9902 12C23.9902 8.741 23.9762 8.333 23.9182 7.053C23.7222 2.699 21.3012 0.273 16.9392 0.073C15.6582 0.014 15.2492 0 11.9902 0ZM11.9902 5.838C8.58723 5.838 5.82823 8.597 5.82823 12C5.82823 15.403 8.58723 18.163 11.9902 18.163C15.3932 18.163 18.1522 15.404 18.1522 12C18.1522 8.597 15.3932 5.838 11.9902 5.838ZM11.9902 16C9.78123 16 7.99023 14.21 7.99023 12C7.99023 9.791 9.78123 8 11.9902 8C14.1992 8 15.9902 9.791 15.9902 12C15.9902 14.21 14.1992 16 11.9902 16ZM18.3962 4.155C17.6002 4.155 16.9552 4.8 16.9552 5.595C16.9552 6.39 17.6002 7.035 18.3962 7.035C19.1912 7.035 19.8352 6.39 19.8352 5.595C19.8352 4.8 19.1912 4.155 18.3962 4.155Z" fill="var(--Icon-Default-Default, #1E1E1E)"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_149_1374">
+          <rect width="24" height="24" fill="white" transform="translate(-0.00976562)"/>
+          </clipPath>
+          </defs>
+          </svg>
+        </div>
+        <div data-svg-wrapper data-layer="Logo YouTube" class="LogoYoutube" style="position: relative">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_149_1376)">
+          <path d="M19.6052 3.18413C16.0012 2.93813 7.97423 2.93913 4.37523 3.18413C0.478235 3.45013 0.0192344 5.80412 -0.00976562 12.0001C0.0192344 18.1851 0.474235 20.5491 4.37523 20.8161C7.97523 21.0611 16.0012 21.0621 19.6052 20.8161C23.5022 20.5501 23.9612 18.1961 23.9902 12.0001C23.9612 5.81512 23.5062 3.45113 19.6052 3.18413ZM8.99023 16.0001V8.00013L16.9902 11.9931L8.99023 16.0001Z" fill="var(--Icon-Default-Default, #1E1E1E)"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_149_1376">
+          <rect width="24" height="24" fill="white" transform="translate(-0.00976562)"/>
+          </clipPath>
+          </defs>
+          </svg>
+        </div>
+        <div data-svg-wrapper data-layer="LinkedIn" class="Linkedin" style="position: relative">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_149_1378)">
+          <path d="M18.9902 0H4.99023C2.22923 0 -0.00976562 2.239 -0.00976562 5V19C-0.00976562 21.761 2.22923 24 4.99023 24H18.9902C21.7522 24 23.9902 21.761 23.9902 19V5C23.9902 2.239 21.7522 0 18.9902 0ZM7.99023 19H4.99023V8H7.99023V19ZM6.49023 6.732C5.52423 6.732 4.74023 5.942 4.74023 4.968C4.74023 3.994 5.52423 3.204 6.49023 3.204C7.45623 3.204 8.24023 3.994 8.24023 4.968C8.24023 5.942 7.45723 6.732 6.49023 6.732ZM19.9902 19H16.9902V13.396C16.9902 10.028 12.9902 10.283 12.9902 13.396V19H9.99023V8H12.9902V9.765C14.3862 7.179 19.9902 6.988 19.9902 12.241V19Z" fill="var(--Icon-Default-Default, #1E1E1E)"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_149_1378">
+          <rect width="24" height="24" fill="white" transform="translate(-0.00976562)"/>
+          </clipPath>
+          </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div data-layer="Links" class="Links" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 24px; display: flex">
+      <div data-layer="Text Link List" data-density="Tight" data-has-title="true" class="TextLinkList" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+        <div data-layer="Title" class="Title" style="align-self: stretch; padding-bottom: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
+          <div data-layer="Text Strong" class="TextStrong" style="align-self: stretch; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div data-layer="Text Strong" class="TextStrong" style="color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 700; line-height: 22.40px; word-wrap: break-word">TeaRex</div>
+          </div>
+        </div>
+        <div data-layer="Text Link List Item" class="TextLinkListItem" style="align-self: stretch; height: 22px; position: relative">
+          <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Sklep</div>
+        </div>
+        <div data-layer="Text Link List Item" class="TextLinkListItem" style="align-self: stretch; height: 22px; position: relative">
+          <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Blog</div>
+        </div>
+        <div data-layer="Text Link List Item" class="TextLinkListItem" style="align-self: stretch; height: 22px; position: relative">
+          <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Przepisy</div>
+        </div>
+        <div data-layer="Text Link List Item" class="TextLinkListItem" style="align-self: stretch; height: 22px; position: relative">
+          <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">O nas</div>
+        </div>
+        <div data-layer="Text Link List Item" class="TextLinkListItem" style="align-self: stretch; height: 22px; position: relative">
+          <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Galeria</div>
+        </div>
+      </div>
+      <div data-layer="Text Link List" data-density="Tight" data-has-title="true" class="TextLinkList" style="align-self: stretch; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 8px; display: flex">
+        <div data-layer="Title" class="Title" style="align-self: stretch; padding-bottom: 4px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
+          <div data-layer="Text Strong" class="TextStrong" style="align-self: stretch; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+            <div data-layer="Text Strong" class="TextStrong" style="color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 700; line-height: 22.40px; word-wrap: break-word">Kontakt</div>
+          </div>
+        </div>
+        <div data-layer="Text Link List Item" class="TextLinkListItem" style="align-self: stretch; height: 22px; position: relative">
+          <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">610 892 633</div>
+        </div>
+        <div data-layer="Text Link List Item" class="TextLinkListItem" style="align-self: stretch; height: 22px; position: relative">
+          <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Tearex@wpgmail.com</div>
+        </div>
+        <div data-layer="Text Link List Item" class="TextLinkListItem" style="align-self: stretch; height: 22px; position: relative">
+          <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Al. Warszawskie 12, Kraków 03-300</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
   </body>
 </html>
