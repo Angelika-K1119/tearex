@@ -1,39 +1,3 @@
-
-I'll help you add the green gradient hover effects to the navigation pills and add a green-tinted overlay to the hero section. Since I don't see the CSS file, I'll create the complete styling with these enhancements.
-
-
-TeaRex - Enhanced Navigation & Hero
-Interactive artifact 
-I've enhanced your TeaRex website with the requested features:
-
-Navigation Pills Enhancement:
-Green gradient background (
-#4CAF50 to 
-#2E7D32) on hover and active states
-White text when hovered or active
-Smooth transitions with subtle animations
-Elevated effect with shadow and slight upward movement
-Pill-shaped design with rounded corners
-Hero Section Green Overlay:
-Dual-layer green overlay using ::before and ::after pseudo-elements
-Linear gradient overlay with green tints
-Radial gradient overlay for depth and visual interest
-Layered effect that maintains text readability
-Additional Enhancements:
-Responsive design that works on mobile devices
-Smooth animations and transitions throughout
-Modern styling with backdrop blur effects
-Consistent green theme matching your brand colors
-Hover effects on cards and buttons
-Professional typography with proper spacing
-The navigation pills now have a beautiful green gradient effect when you hover over them, and the hero section has a subtle green-tinted overlay that adds depth while maintaining the readability of your "TeaRex" title and subtitle.
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -64,29 +28,70 @@ The navigation pills now have a beautiful green gradient effect when you hover o
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
+      padding: 1rem 2rem;
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .LogoCircle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .LogoCircle:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .LogoCircle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .NavigationPillList {
       display: flex;
-      gap: 8px;
+      gap: 1.5rem;
+      align-items: center;
+      flex: 1;
+      justify-content: center;
+      margin-left: -60px; /* Offset for logo width to center navigation */
     }
 
     .NavigationPillList a {
       text-decoration: none;
-      color: #666;
-      padding: 12px 24px;
+      color: #333;
+      padding: 0.75rem 1.5rem;
       border-radius: 25px;
       font-weight: 500;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+    }
+
+    .NavigationPillList a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.5s;
+    }
+
+    .NavigationPillList a:hover::before {
+      left: 100%;
     }
 
     .NavigationPillList a::before {
@@ -111,13 +116,13 @@ The navigation pills now have a beautiful green gradient effect when you hover o
     .NavigationPillList a.active {
       color: white;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
     }
 
     .HeroImage {
       position: relative;
       height: 70vh;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg, #2E7D32 0%, #4CAF50 25%, #66BB6A 50%, #81C784 75%, #A5D6A7 100%);
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -133,8 +138,14 @@ The navigation pills now have a beautiful green gradient effect when you hover o
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(76, 175, 80, 0.3), rgba(46, 125, 50, 0.2));
+      background: linear-gradient(45deg, 
+        rgba(139, 195, 74, 0.3) 0%, 
+        rgba(76, 175, 80, 0.2) 25%, 
+        rgba(46, 125, 50, 0.3) 50%, 
+        rgba(27, 94, 32, 0.2) 75%, 
+        rgba(76, 175, 80, 0.3) 100%);
       z-index: 1;
+      animation: colorShift 8s ease-in-out infinite;
     }
 
     .HeroImage::after {
@@ -144,8 +155,43 @@ The navigation pills now have a beautiful green gradient effect when you hover o
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at center, rgba(76, 175, 80, 0.1) 0%, rgba(46, 125, 50, 0.3) 100%);
+      background: radial-gradient(ellipse at center, 
+        rgba(165, 214, 167, 0.2) 0%, 
+        rgba(129, 199, 132, 0.3) 30%, 
+        rgba(102, 187, 106, 0.2) 60%, 
+        rgba(76, 175, 80, 0.4) 100%);
       z-index: 2;
+      animation: pulseGreen 6s ease-in-out infinite alternate;
+    }
+
+    @keyframes colorShift {
+      0%, 100% { 
+        background: linear-gradient(45deg, 
+          rgba(139, 195, 74, 0.3) 0%, 
+          rgba(76, 175, 80, 0.2) 25%, 
+          rgba(46, 125, 50, 0.3) 50%, 
+          rgba(27, 94, 32, 0.2) 75%, 
+          rgba(76, 175, 80, 0.3) 100%);
+      }
+      50% { 
+        background: linear-gradient(45deg, 
+          rgba(76, 175, 80, 0.4) 0%, 
+          rgba(139, 195, 74, 0.3) 25%, 
+          rgba(102, 187, 106, 0.2) 50%, 
+          rgba(165, 214, 167, 0.3) 75%, 
+          rgba(46, 125, 50, 0.2) 100%);
+      }
+    }
+
+    @keyframes pulseGreen {
+      0% { 
+        opacity: 0.6;
+        transform: scale(1);
+      }
+      100% { 
+        opacity: 0.8;
+        transform: scale(1.05);
+      }
     }
 
     .Title {
@@ -153,20 +199,52 @@ The navigation pills now have a beautiful green gradient effect when you hover o
       font-weight: 700;
       color: white;
       margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5), 
+                   0 0 20px rgba(255, 255, 255, 0.3),
+                   0 0 40px rgba(139, 195, 74, 0.4);
       position: relative;
       z-index: 3;
-      animation: fadeInUp 1s ease-out;
+      animation: fadeInUp 1s ease-out, titleGlow 4s ease-in-out infinite alternate;
+      background: linear-gradient(45deg, #FFFFFF, #E8F5E8, #FFFFFF);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% 200%;
+      animation: fadeInUp 1s ease-out, titleShimmer 3s ease-in-out infinite;
     }
 
     .Subtitle {
       font-size: 1.5rem;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.95);
       font-weight: 400;
-      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4),
+                   0 0 15px rgba(139, 195, 74, 0.3);
       position: relative;
       z-index: 3;
-      animation: fadeInUp 1s ease-out 0.3s both;
+      animation: fadeInUp 1s ease-out 0.3s both, subtitleGlow 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes titleShimmer {
+      0%, 100% { 
+        background-position: 0% 50%;
+        filter: drop-shadow(0 0 10px rgba(139, 195, 74, 0.5));
+      }
+      50% { 
+        background-position: 100% 50%;
+        filter: drop-shadow(0 0 20px rgba(165, 214, 167, 0.8));
+      }
+    }
+
+    @keyframes subtitleGlow {
+      0% { 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4),
+                     0 0 15px rgba(139, 195, 74, 0.3);
+      }
+      100% { 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4),
+                     0 0 25px rgba(165, 214, 167, 0.6),
+                     0 0 35px rgba(129, 199, 132, 0.4);
+      }
     }
 
     @keyframes fadeInUp {
@@ -276,14 +354,22 @@ The navigation pills now have a beautiful green gradient effect when you hover o
 
     @media (max-width: 768px) {
       .Header {
-        padding: 15px 20px;
         flex-direction: column;
-        gap: 20px;
+        gap: 1rem;
+        padding: 1rem;
+        justify-content: center;
+      }
+
+      .LogoCircle {
+        width: 50px;
+        height: 50px;
       }
 
       .NavigationPillList {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 0.5rem;
+        margin-left: 0;
       }
 
       .NavigationPillList a {
@@ -315,10 +401,8 @@ The navigation pills now have a beautiful green gradient effect when you hover o
 <body>
   <div class="MainPageDesktop">
     <div class="Header">
-      <a href="index.html">
-        <div style="width: 44px; height: 44px; background: #F5F5F5; border-radius: 50%; display: flex; justify-content: center; align-items: center;">
-          <img src="herbata.jpg" alt="logo" width="20" height="20" />
-        </div>
+      <a href="index.html" class="LogoCircle">
+        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=200&h=200&fit=crop&crop=center" alt="TeaRex Logo">
       </a>
       <div class="NavigationPillList">
         <a href="galeria.html">Galeria</a>
