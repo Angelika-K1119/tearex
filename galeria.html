@@ -7,7 +7,67 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles_galeria.css">
+  <style>
+    /* Navigation pill hover and active states */
+    .NavigationPill a {
+      padding: 12px 24px;
+      border-radius: 24px;
+      transition: all 0.3s ease;
+      display: block;
+      text-decoration: none;
+    }
+    
+    .NavigationPill a:hover,
+    .NavigationPill a.active {
+      background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+      color: white !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+    }
+    
+    .NavigationPill a div {
+      transition: color 0.3s ease;
+    }
+    
+    .NavigationPill a:hover div,
+    .NavigationPill a.active div {
+      color: white !important;
+    }
+    
+    /* Hero section with green overlay */
+    .HeroImage {
+      position: relative;
+    }
+    
+    .HeroImage::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.3) 0%, rgba(46, 125, 50, 0.4) 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .HeroImage > * {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Ensure images maintain their styling */
+    .Image {
+      transition: transform 0.3s ease;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    .Image:hover {
+      transform: scale(1.02);
+    }
+  </style>
 </head>
 <body>
      <div data-layer="Galeria desktop" class="GaleriaDesktop" style="width: 100%; height: 100%; background: var(--Background-Default-Default, white); overflow: hidden; flex-direction: column; justify-content: flex-start; align-items: flex-start; display: inline-flex">
@@ -33,37 +93,50 @@
 </div>
     <!-- Changed justify-content from flex-end to center -->
     <div data-layer="Navigation Pill List" data-direction="Row" data-link-1="false" data-link-2="true" data-link-3="true" data-link-4="true" data-link-5="true" data-link-6="true" data-link-7="true" class="NavigationPillList" style="flex: 1 1 0; justify-content: center; align-items: flex-start; gap: 8px; display: flex; flex-wrap: wrap; align-content: flex-start">
-      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 38px; border-radius: 38px; justify-content: center; align-items: center; gap: 38px; display: flex">
-        <a href="galeria.html" style="text-decoration: none; color: inherit;">
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="border-radius: 38px; justify-content: center; align-items: center; display: flex">
+        <a href="galeria.html" class="active" style="text-decoration: none; color: inherit;">
   <div data-layer="Galeria" class="Galeria"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     Galeria
   </div>
 </a>
+      </div>
+      
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="border-radius: 38px; justify-content: center; align-items: center; display: flex">
       <a href="sklep.html" style="text-decoration: none; color: inherit;">
   <div data-layer="Sklep" class="sklep"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     Sklep
   </div>
 </a>
+      </div>
+      
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="border-radius: 38px; justify-content: center; align-items: center; display: flex">
       <a href="blog.html" style="text-decoration: none; color: inherit;">
   <div data-layer="Blog" class="blog"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     Blog
   </div>
 </a>
+      </div>
+      
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="border-radius: 38px; justify-content: center; align-items: center; display: flex">
       <a href="onas.html" style="text-decoration: none; color: inherit;">
   <div data-layer="Onas" class="onas"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     O nas
   </div>
 </a>
-      <a href="onas.html" style="text-decoration: none; color: inherit;">
-  <div data-layer="Onas" class="onas"
+      </div>
+      
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="border-radius: 38px; justify-content: center; align-items: center; display: flex">
+      <a href="kontakt.html" style="text-decoration: none; color: inherit;">
+  <div data-layer="Kontakt" class="kontakt"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     Kontakt
   </div>
 </a>
+      </div>
     </div>
   </div>
   <div data-layer="Hero Image" class="HeroImage" style="width: 1440px; padding-left: 24px; padding-right: 24px; padding-top: 190px; padding-bottom: 190px; background-image: url(greentea.jpeg); flex-direction: column; justify-content: center; align-items: center; gap: 32px; display: flex">
@@ -190,6 +263,3 @@
       </div>
     </div>
   </div>
-</div>
-</body>
-</html>
