@@ -5,7 +5,276 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TeaRex</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .MainPageDesktop {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .Header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .NavigationPillList {
+      display: flex;
+      gap: 8px;
+    }
+
+    .NavigationPillList a {
+      text-decoration: none;
+      color: #666;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .NavigationPillList a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: -1;
+    }
+
+    .NavigationPillList a:hover::before,
+    .NavigationPillList a.active::before {
+      opacity: 1;
+    }
+
+    .NavigationPillList a:hover,
+    .NavigationPillList a.active {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+    }
+
+    .HeroImage {
+      position: relative;
+      height: 70vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .HeroImage::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.3), rgba(46, 125, 50, 0.2));
+      z-index: 1;
+    }
+
+    .HeroImage::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, rgba(76, 175, 80, 0.1) 0%, rgba(46, 125, 50, 0.3) 100%);
+      z-index: 2;
+    }
+
+    .Title {
+      font-size: 4rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 3;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .Subtitle {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 400;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 3;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .CardGridContentList {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .Card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .Card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .Card .Image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .Card div {
+      padding: 30px;
+    }
+
+    .Card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: #333;
+    }
+
+    .Card p {
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .Button {
+      display: inline-block;
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      color: white;
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    }
+
+    .Button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+      background: linear-gradient(135deg, #5CBF60, #3E8E41);
+    }
+
+    .Footer {
+      background: #f8f9fa;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: auto;
+    }
+
+    .Footer strong {
+      display: block;
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 1.1rem;
+    }
+
+    .Footer p {
+      margin-bottom: 8px;
+      color: #666;
+    }
+
+    .Footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .Footer a:hover {
+      color: #2E7D32;
+    }
+
+    @media (max-width: 768px) {
+      .Header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .NavigationPillList {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .NavigationPillList a {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .Title {
+        font-size: 2.5rem;
+      }
+
+      .Subtitle {
+        font-size: 1.2rem;
+      }
+
+      .CardGridContentList {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+        gap: 20px;
+      }
+
+      .Footer {
+        padding: 30px 20px;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="MainPageDesktop">
@@ -23,12 +292,10 @@
         <a href="onas.html">O nas</a>
       </div>
     </div>
-
     <div class="HeroImage">
       <div class="Title">TeaRex</div>
       <div class="Subtitle">Królestwo herbaty</div>
     </div>
-
     <div class="CardGridContentList">
       <div class="Card">
         <img class="Image" src="sklep_uciete.png" alt="Sklep">
@@ -38,7 +305,6 @@
           <a href="sklep.html" class="Button">Dowiedz się więcej...</a>
         </div>
       </div>
-
       <div class="Card">
         <img class="Image" src="herbata_blog.png" alt="Blog">
         <div>
@@ -47,7 +313,6 @@
           <a href="blog.html" class="Button">Dowiedz się więcej...</a>
         </div>
       </div>
-
       <div class="Card">
         <img class="Image" src="herbata_przepisy.png" alt="Przepisy">
         <div>
@@ -57,14 +322,13 @@
         </div>
       </div>
     </div>
-
     <div class="Footer">
       <div>
         <strong>TeaRex</strong>
         <p><a href="sklep.html">Sklep</a></p>
         <p><a href="blog.html">Blog</a></p>
         <p><a href="przepisy.html">Przepisy</a></p>
-        <p><a href="onas.html"></a></p>
+        <p><a href="onas.html">O nas</a></p>
       </div>
       <div>
         <strong>Kontakt</strong>
