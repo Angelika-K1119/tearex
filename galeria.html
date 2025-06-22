@@ -67,6 +67,50 @@
     .Image:hover {
       transform: scale(1.02);
     }
+    @media (max-width: 768px) {
+  .Header,
+  .PanelImageDouble,
+  .Footer {
+    flex-direction: column !important;
+    padding: 16px !important;
+    gap: 24px !important;
+  }
+
+  .NavigationPillList {
+    justify-content: center !important;
+  }
+
+  .PanelImageDouble img {
+    width: 100% !important;
+    max-width: 100%;
+  }
+
+  .HeroImage {
+    padding: 80px 16px !important;
+    background-size: cover;
+    background-position: center;
+    width: 100% !important;
+  }
+
+  .Title {
+    font-size: 36px !important;
+    line-height: 44px !important;
+  }
+
+  .Subtitle {
+    font-size: 24px !important;
+    line-height: 32px !important;
+  }
+
+  .TextLinkList {
+    width: 100% !important;
+  }
+
+  .TextLinkListItem {
+    width: 100% !important;
+  }
+}
+
   </style>
 </head>
 <body>
