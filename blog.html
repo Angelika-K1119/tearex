@@ -7,33 +7,33 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles_blog.css">
   <style>
-    /* Navigation Pills Hover Effects */
+    /* Navigation Pills Hover/Active Effects */
     .NavigationPill {
       transition: all 0.3s ease;
-      border-radius: 38px;
+      border-radius: 24px;
     }
     
     .NavigationPill:hover {
-      background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
       transform: translateY(-2px);
       box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
     }
     
-    .NavigationPill:hover .Galeria,
-    .NavigationPill:hover .sklep,
-    .NavigationPill:hover .blog,
-    .NavigationPill:hover .onas {
+    .NavigationPill:hover a div {
       color: white !important;
+      font-weight: 500;
     }
     
-    /* Active state for current page (Blog) */
     .NavigationPill.active {
-      background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+      background: linear-gradient(135deg, #4CAF50, #2E7D32);
+      box-shadow: 0 2px 8px rgba(76, 175, 80, 0.4);
     }
     
-    .NavigationPill.active .blog {
+    .NavigationPill.active a div {
       color: white !important;
+      font-weight: 500;
     }
     
     /* Hero Section Green Overlay */
@@ -48,14 +48,18 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: linear-gradient(135deg, rgba(76, 175, 80, 0.2) 0%, rgba(46, 125, 50, 0.3) 100%);
-      pointer-events: none;
+      background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(46, 125, 50, 0.3));
       z-index: 1;
     }
     
     .HeroImage > * {
       position: relative;
       z-index: 2;
+    }
+    
+    /* Smooth transitions for navigation links */
+    .NavigationPill a {
+      transition: all 0.3s ease;
     }
   </style>
 </head>
@@ -82,7 +86,7 @@
   </a>
 </div>
     <div data-layer="Navigation Pill List" data-direction="Row" data-link-1="false" data-link-2="true" data-link-3="true" data-link-4="true" data-link-5="true" data-link-6="true" data-link-7="true" class="NavigationPillList" style="flex: 1 1 0; justify-content: flex-end; align-items: flex-start; gap: 8px; display: flex; flex-wrap: wrap; align-content: flex-start">
-      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 38px; border-radius: 38px; justify-content: center; align-items: center; gap: 38px; display: flex">
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 12px 20px; border-radius: 24px; justify-content: center; align-items: center; gap: 8px; display: flex">
         <a href="galeria.html" style="text-decoration: none; color: inherit;">
   <div data-layer="Galeria" class="Galeria"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
@@ -90,42 +94,42 @@
   </div>
 </a>
       </div>
-      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 38px; border-radius: 38px; justify-content: center; align-items: center; gap: 38px; display: flex">
-      <a href="sklep.html" style="text-decoration: none; color: inherit;">
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 12px 20px; border-radius: 24px; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <a href="sklep.html" style="text-decoration: none; color: inherit;">
   <div data-layer="Sklep" class="sklep"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     Sklep
   </div>
 </a>
       </div>
-      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill active" style="padding: 38px; border-radius: 38px; justify-content: center; align-items: center; gap: 38px; display: flex">
-      <a href="blog.html" style="text-decoration: none; color: inherit;">
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill active" style="padding: 12px 20px; border-radius: 24px; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <a href="blog.html" style="text-decoration: none; color: inherit;">
   <div data-layer="Blog" class="blog"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     Blog
   </div>
 </a>
       </div>
-      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 38px; border-radius: 38px; justify-content: center; align-items: center; gap: 38px; display: flex">
-      <a href="onas.html" style="text-decoration: none; color: inherit;">
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 12px 20px; border-radius: 24px; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <a href="onas.html" style="text-decoration: none; color: inherit;">
   <div data-layer="Onas" class="onas"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     O nas
   </div>
 </a>
       </div>
-      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 38px; border-radius: 38px; justify-content: center; align-items: center; gap: 38px; display: flex">
-      <a href="onas.html" style="text-decoration: none; color: inherit;">
+      <div data-layer="Navigation Pill" data-state="Default" class="NavigationPill" style="padding: 12px 20px; border-radius: 24px; justify-content: center; align-items: center; gap: 8px; display: flex">
+        <a href="onas.html" style="text-decoration: none; color: inherit;">
   <div data-layer="Onas" class="onas"
        style="cursor: pointer; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 16px; word-wrap: break-word">
     Kontakt
   </div>
 </a>
-    </div>
+      </div>
     </div>
   </div>
     </div>
-    <div data-layer="Hero Image" class="HeroImage" style="width: 1440px; padding-left: 24px; padding-right: 24px; padding-top: 190px; padding-bottom: 190px; background-image: url(herbata_do_bloga_2.jpg); flex-direction: column; justify-content: center; align-items: center; gap: 32px; display: flex">
+    <div data-layer="Hero Image" class="HeroImage" style="width: 1440px; padding-left: 24px; padding-right: 24px; padding-top: 190px; padding-bottom: 190px; background-image: url(herbata_do_bloga_2.jpg); background-size: cover; background-position: center; flex-direction: column; justify-content: center; align-items: center; gap: 32px; display: flex">
     <div data-layer="Text Content Title" data-align="Center" data-has-subtitle="true" class="TextContentTitle" style="flex-direction: column; justify-content: flex-start; align-items: center; gap: 8px; display: flex">
       <div data-layer="Title" class="Title" style="align-self: stretch; text-align: center; color: #F5F5F5; font-size: 72px; font-family: Inter; font-weight: 700; line-height: 86.40px; word-wrap: break-word">TeaRex</div>
       <div data-layer="Subtitle" class="Subtitle" style="align-self: stretch; text-align: center; justify-content: center; display: flex; flex-direction: column; color: white; font-size: 48px; font-family: Inter; font-weight: 700; line-height: 57.60px; word-wrap: break-word; text-shadow: 4px 3px 4px rgba(0, 0, 0, 0.25)">Blog</div>
@@ -202,4 +206,88 @@
         <div data-svg-wrapper data-layer="Logo YouTube" class="LogoYoutube" style="position: relative">
           <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_149_1825)">
-          <path d="M20.595 3.18413C16.
+          <path d="M20.595 3.18413C16.991 2.93813 8.96398 2.93913 5.36498 3.18413C1.46798 3.45013 1.00898 5.80412 0.97998 12.0001C1.00898 18.1851 1.46398 20.5491 5.36498 20.8161C8.96498 21.0611 16.991 21.0621 20.595 20.8161C24.492 20.5501 24.951 18.1961 24.98 12.0001C24.951 5.81512 24.496 3.45113 20.595 3.18413ZM9.97998 16.0001V8.00013L17.98 11.9931L9.97998 16.0001Z" fill="var(--Icon-Default-Default, #1E1E1E)"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_149_1825">
+          <rect width="24" height="24" fill="white" transform="translate(0.97998)"/>
+          </clipPath>
+          </defs>
+          </svg>
+        </div>
+        <div data-svg-wrapper data-layer="LinkedIn" class="Linkedin" style="position: relative">
+          <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g clip-path="url(#clip0_149_1827)">
+          <path d="M19.98 0H5.97998C3.21898 0 0.97998 2.239 0.97998 5V19C0.97998 21.761 3.21898 24 5.97998 24H19.98C22.742 24 24.98 21.761 24.98 19V5C24.98 2.239 22.742 0 19.98 0ZM8.97998 19H5.97998V8H8.97998V19ZM7.47998 6.732C6.51398 6.732 5.72998 5.942 5.72998 4.968C5.72998 3.994 6.51398 3.204 7.47998 3.204C8.44598 3.204 9.22998 3.994 9.22998 4.968C9.22998 5.942 8.44698 6.732 7.47998 6.732ZM20.98 19H17.98V13.396C17.98 10.028 13.98 10.283 13.98 13.396V19H10.98V8H13.98V9.765C15.376 7.179 20.98 6.988 20.98 12.241V19Z" fill="var(--Icon-Default-Default, #1E1E1E)"/>
+          </g>
+          <defs>
+          <clipPath id="clip0_149_1827">
+          <rect width="24" height="24" fill="white" transform="translate(0.97998)"/>
+          </clipPath>
+          </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div data-layer="Text Link List" data-density="Default" data-has-title="true" class="TextLinkList" style="width: 262px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+      <div data-layer="Title" class="Title" style="align-self: stretch; padding-bottom: 16px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
+        <div data-layer="Text Strong" class="TextStrong" style="align-self: stretch; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div data-layer="Text Strong" class="TextStrong" style="color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 600; line-height: 22.40px; word-wrap: break-word">TeaRex</div>
+        </div>
+      </div>
+      <a href="sklep.html" style="text-decoration: none; color: inherit;">
+  <div data-layer="Text Link List Item" class="TextLinkListItem" style="width: 89px; height: 22px; position: relative">
+    <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">
+      Sklep
+    </div>
+  </div>
+</a>
+      <a href="blog.html" style="text-decoration: none; color: inherit;">
+  <div data-layer="Text Link List Item" class="TextLinkListItem" style="width: 89px; height: 22px; position: relative">
+    <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">
+      Blog
+    </div>
+  </div>
+</a>
+      <a href="przepisy.html" style="text-decoration: none; color: inherit;">
+  <div data-layer="Text Link List Item" class="TextLinkListItem" style="width: 89px; height: 22px; position: relative">
+    <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">
+      Przepisy
+    </div>
+  </div>
+</a>
+      <a href="galeria.html" style="text-decoration: none; color: inherit;">
+  <div data-layer="Text Link List Item" class="TextLinkListItem" style="width: 89px; height: 22px; position: relative">
+    <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">
+      Galeria
+    </div>
+  </div>
+</a>
+      <a href="onas.html" style="text-decoration: none; color: inherit;">
+  <div data-layer="Text Link List Item" class="TextLinkListItem" style="width: 89px; height: 22px; position: relative">
+    <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">
+      O nas
+    </div>
+  </div>
+</a>
+    </div>
+    <div data-layer="Text Link List" data-density="Default" data-has-title="true" class="TextLinkList" style="width: 262px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 12px; display: inline-flex">
+      <div data-layer="Title" class="Title" style="align-self: stretch; padding-bottom: 16px; flex-direction: column; justify-content: flex-start; align-items: flex-start; gap: 10px; display: flex">
+        <div data-layer="Text Strong" class="TextStrong" style="align-self: stretch; justify-content: flex-start; align-items: flex-start; display: inline-flex">
+          <div data-layer="Text Strong" class="TextStrong" style="color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 600; line-height: 22.40px; word-wrap: break-word">Kontakt</div>
+        </div>
+      </div>
+      <div data-layer="Text Link List Item" class="TextLinkListItem" style="width: 300px; height: 22px; position: relative">
+        <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">610 892 633</div>
+      </div>
+      <div data-layer="Text Link List Item" class="TextLinkListItem" style="width: 300px; height: 22px; position: relative">
+        <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Tearex@wpgmail.com</div>
+      </div>
+      <div data-layer="Text Link List Item" class="TextLinkListItem" style="width: 300px; height: 22px; position: relative">
+        <div data-layer="List item" class="ListItem" style="left: 0px; top: 0px; position: absolute; justify-content: center; display: flex; flex-direction: column; color: var(--Text-Default-Default, #1E1E1E); font-size: 16px; font-family: Inter; font-weight: 400; line-height: 22.40px; word-wrap: break-word">Al. Warszawskie 12, Kraków 03-300</div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
